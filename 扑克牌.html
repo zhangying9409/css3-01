@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background-color: blueviolet;
+        }
+       .div1{
+            width: 100px;
+            height: 150px;
+            margin: 20px auto;
+            transition: all 2s;
+            margin: 100px auto;
+            background: url("images/pk2.png") no-repeat center/100px 150px;
+            transform-origin: 100% 0%;
+        }
+        .div1:hover{
+            transform: rotate(360deg);
+        }
+        .box{
+            width: 100px;
+            height: 150px;
+            margin: 100px auto;
+            border: 1px solid #000;
+            position: relative;
+        }
+        .box>img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-origin: top left;
+            transition: all 2s;
+        }
+        .box:hover img:nth-child(1){
+        transform: rotate(-40deg);
+        }
+        .box:hover img:nth-child(2){
+            transform: rotate(-80deg);
+        }
+        .box:hover img:nth-child(3){
+            transform: rotate(-120deg);
+        }
+        .box:hover img:nth-child(4){
+            transform: rotate(-160deg);
+        }
+        .box:hover img:nth-child(5){
+            transform: rotate(-200deg);
+        }
+
+        .box:hover img:nth-child(6){
+            transform: rotate(-240deg);
+        }
+
+        .box:hover img:nth-child(7){
+            transform: rotate(-280deg);
+        }
+
+        .box:hover img:nth-child(8){
+            transform: rotate(-320deg);
+        }
+
+        .box:hover img:nth-child(9){
+            transform: rotate(-360deg);
+        }
+        .box2{
+            width: 100px;
+            height: 150px;
+            margin: 100px auto;
+            border: 1px solid #000;
+            position: relative;
+        }
+        .box2>img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            /*transform-origin: top left;*/
+            transition: all .5s;
+
+        }
+        .box2:hover img:nth-child(1){
+            transform: translate(-300px ,-40px) rotate(360deg);
+            transition: all .1s .2s;
+        }
+        .box2:hover img:nth-child(2){
+            transform: translate(-250px, -40px) rotate(-180deg);
+            transition: all .1s .4s;
+        }
+        .box2:hover img:nth-child(3){
+            transform: translate(-200px, -40px) rotate(0deg);
+            transition: all .1s .6s;
+        }
+        .box2:hover img:nth-child(4){
+            transform: translate(-150px, -40px) rotate(360deg);
+            transition: all .1s .8s;
+        }
+        .box2:hover img:nth-child(5){
+            transform: translate(-100px, -40px) rotate(-360deg);
+            transition: all .1s 1s;
+        }
+        .box2:hover img:nth-child(6){
+            transform: translate(-50px, -40px) rotate(-360deg);
+            transition: all .1s 1.2s;
+        }
+        .box2:hover img:nth-child(7){
+            transform: translate(0px, -40px) rotate(0deg);
+            transition: all .1s 1.4s;
+        }
+        .box2:hover img:nth-child(8){
+            transform: translate(50px, -40px) rotate(-180deg);
+            transition: all .1s 1.6s;
+        }
+        .box2:hover img:nth-child(9){
+            transform: translate(100px, -40px) rotate(360deg);
+            transition: all .1s 1.8s;
+        }
+        .box2:hover img:nth-child(10){
+            transform: translate(150px, -40px) rotate(180deg);
+            transition: all .1s 2s;
+        }
+        .box3{
+            width: 100px;
+            height: 150px;
+            margin: 100px auto;
+            border: 1px solid #000;
+            position: relative;
+        }
+        .box3>img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            /*transform-origin: top left;*/
+            transition: all .5s .2s;
+
+        }
+        .box3:hover img:nth-child(1){
+            transform: translate(-300px ,-40px) rotate(360deg);
+            transition: all .1s .2s;
+        }
+        .box3:hover img:nth-child(2){
+            transform: translate(150px, -40px) rotate(180deg);
+            transition: all .1s .3s;
+        }
+        .box3:hover img:nth-child(3){
+            transform: translate(-250px, -40px) rotate(-180deg);
+            transition: all .1s .4s;
+        }
+        .box3:hover img:nth-child(4){
+            transform: translate(100px, -40px) rotate(360deg);
+            transition: all .1s .5s;
+        }
+        .box3:hover img:nth-child(5){
+            transform: translate(-200px, -40px) rotate(0deg);
+            transition: all .1s .6s;
+        }
+        .box3:hover img:nth-child(6){
+            transform: translate(50px, -40px) rotate(-180deg);
+/*
+            补充：****** transform: translate小盒子居中问题： 在不知道小盒子宽度的情况下，可以代替小盒子水平方向的的50%左移动
+*/
+            transition: all .1s .7s;
+        }
+        .box3:hover img:nth-child(7){
+            transform: translate(-150px, -40px) rotate(360deg);
+            transition: all .1s .8s;
+        }
+        .box3:hover img:nth-child(8){
+            transform: translate(0px, -40px) rotate(0deg);
+            transition: all .1s .9s;
+        }
+
+        .box3:hover img:nth-child(9){
+            transform: translate(-100px, -40px) rotate(-360deg);
+            transition: all .1s 1s;
+        }
+        .box3:hover img:nth-child(10){
+            transform: translate(-50px, -40px) rotate(-360deg);
+            transition: all .1s 1.1s;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+<div class="box"> <!--一堆纸牌旋转-->
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+</div>
+<div class="box2"><!--一张一张一个方向发牌-->
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+</div>
+<div class="box3"><!--一张一张左右方向发牌-->
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+    <img src="images/pk2.png" alt=""/>
+</div>
+</body>
+</html>

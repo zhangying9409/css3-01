@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+       
+        .robot>div{
+            /*background-color: greenyellow;*/
+            margin: 100px auto;
+        }
+        .head{
+            width: 230px;
+            height: 105px;
+            margin: 200px auto;
+            border-top-left-radius: 100px;
+            border-top-right-radius: 100px;
+            position: relative;
+            background-color: greenyellow;
+        }
+        .head::before, .head::after{
+            content: "";
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            background-image:radial-gradient(26px at left,white 40%,black 50%);
+            position: absolute;
+            top: 30px;
+
+        }
+        .head::before{
+            left: 65px;
+        }
+        .head::after{
+
+
+            left: 140px;
+        }
+       .robot .line{
+            width: 10px;
+            position: relative;
+        }
+        .line::before{
+            content: "";
+            width: 50px;
+            height: 30px;
+            background-color: red;
+            position: absolute;
+            top: 70px;
+            -webkit-border-radius: 0 0 50px 50px;
+            -moz-border-radius: 0 0 50px 50px;
+            border-radius: 0 0 50px 50px;
+            left: -16px;
+            z-index: 2;
+
+        }
+       .line::after{
+           content: "";
+           display: block;
+           top: -44px ;
+           left: -42px;
+          position: absolute;
+           border: 50px solid yellow;
+           border-radius: 50%;
+           border-color: yellow transparent transparent transparent;
+       }
+        .body{
+            width: 20px;
+            position: relative;
+        }
+        .body::before,.body::after{
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: deepskyblue;
+            top: -97px;
+        }
+        .body::before{
+            left: -140px;
+            transform: rotate(45deg);
+        }
+        .foot{
+            width: 50px;
+            position: relative;
+        }
+        .foot::before{
+            position: absolute;
+            content: "";
+            width: 150px;
+            height: 10px;
+            background-color: black;
+            top: -100px;
+            left: -51px;
+            border-radius: 20%;
+        }
+        .foot::after{
+            position: absolute;
+            content: "";
+            width: 150px;
+            border: 150px solid hotpink;
+            border-color: transparent transparent  hotpink transparent;
+            border-radius: 50%;
+            top: -240px;
+            left: -201px;
+            z-index: 2;
+        }
+        .thing{
+            width: 20px;
+            position: relative;
+        }
+        .thing::after{
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 200px;
+            border-radius: 30%;
+            overflow: hidden;
+
+            transform:translateY(200px);
+            top: -368px;
+            left: -179px;
+            background-color: greenyellow;
+        }
+        .thing::before{
+            content: "";
+            position: absolute;
+            border: 80px solid darkred;
+            border-color: transparent transparent darkred transparent;
+            top: -56px;
+            left: -252px;
+            border-radius: 50%;
+        }
+        *,::before,::after{
+            transition: all 500ms;
+        }
+        .robot:hover  .thing::before{
+            transform: translate(27px,38px) rotate(95deg) scale(1.5);
+        }
+        .robot:hover  .thing::after{
+            height: 400px;
+            transform: translate( 220px ,210px) rotate(85deg) scale(1);
+        }
+        .body::after
+        {
+            left:140px;
+            transform: rotate(-45deg);
+        }
+        .robot:hover .head::before{
+            border-radius: 12px 30px ;
+            background-image:radial-gradient(30px at right,white 40%,black 50%);
+        }
+        .robot:hover .head::after{
+            border-radius: 30px 12px ;
+            background-image:radial-gradient(30px at left,white 40%,black 50%);
+        }
+       .robot:hover .line::before{
+           background-color: orangered ;
+           transform: rotateY(70deg) scale(.8);
+       }
+        .robot:hover .line::after{
+            transform: rotateY(390deg);
+            border-top-color: orangered;
+        }
+       .robot:hover .body::before{
+           transform: rotate(400deg);
+
+       }
+        .robot:hover .body::after{
+            -moz-transform-origin: top left;
+            transform: translateY(-30px) rotate(-500deg);
+        }
+        .robot:hover .foot::after{
+            border-color: transparent transparent  yellow  transparent;
+            transform: rotateY(360deg);
+        }
+        .robot:hover .foot::before{
+            background-color: deeppink ;
+        }
+    </style>
+</head>
+<body>
+<div class="robot">
+    <div class="line"></div>
+    <div class="head"></div>
+    <div class="body"></div>
+    <div class="foot"></div>
+    <div class="thing"></div>
+</div>
+</body>
+</html>

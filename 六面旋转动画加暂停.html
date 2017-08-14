@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            perspective: 1500px;
+            background-color: green;
+        }
+        .box{
+            width: 255px;
+            height: 255px;
+            position: relative;
+            margin: 80px auto;
+            background: url("images/top3255.jpg") no-repeat center center;
+            transform-style: preserve-3d;
+            transition: all 3s;
+
+        }
+        .dv{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        .box>.dv:nth-child(1){
+            transform: rotateY(0deg) translateZ(300px);
+            background: url("images/top0255.jpg") no-repeat center center;
+        }
+        .box>.dv:nth-child(2){
+            transform: rotateY(-60deg) translateZ(300px);
+            background: url("images/top1255.jpg") no-repeat center center;
+        }
+        .box>.dv:nth-child(3){
+            transform:rotateY(-120deg) translateZ(300px) ;
+            background: url("images/top2255.jpg") no-repeat center center;
+        }
+        .box>.dv:nth-child(4){
+            transform:rotateY(-180deg) translateZ(300px) ;
+            background: url("images/top3255.jpg") no-repeat center center;
+        }
+        .box>.dv:nth-child(5){
+            transform:rotateY(-240deg) translateZ(300px) ;
+            background: url("images/top4255.jpg") no-repeat center center;
+        }
+        .box>.dv:nth-child(6){
+            transform: rotateY(-300deg) translateZ(300px);
+            background: url("images/top5255.jpg") no-repeat center center;
+        }
+        @keyframes auto {
+            from{
+
+            }
+            to{
+                transform: rotateY(360deg);
+            }
+        }
+        .ani{
+            animation: auto 3s infinite linear;
+
+        }
+        .box:hover{
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+<div class="box ani">
+    <div class="dv"></div>
+    <div class="dv"></div>
+    <div class="dv"></div>
+    <div class="dv"></div>
+    <div class="dv"></div>
+    <div class="dv"></div>
+</div>
+<audio src="if%20you.mp3"autoplay visibility="hidden" ></audio>
+</body>
+</html>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/snowfall.jquery.js"></script>
+<script>
+    $(document).snowfall('clear');
+    $(document).snowfall({
+    image: "images/huaban.png",
+    flakeCount:80,
+    minSize: 8,
+    maxSize: 15
+    });
+</script>

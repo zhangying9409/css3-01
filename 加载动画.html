@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            background-color: blueviolet;
+            text-align: center;
+        }
+        .box{
+            /*width: 100px;*/
+            /*height: 100px;*/
+           display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin: 200px auto;
+            position: relative;
+            background-color: #fff;
+        }
+       .c{
+           position: absolute;
+           border-radius: 50%;
+       }
+        .c4{
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            z-index: 97;
+            transition: all 2s ;
+            animation:auto 2s .3s infinite ease-in-out;
+        }
+        .c3{
+            width: 25px;
+            height: 25px;
+            background-color: deepskyblue;
+            z-index: 98;
+            transition: all 2s ;
+            animation:auto 2s .2s infinite ease-in-out;
+        }
+        .c2{
+             width: 30px;
+             height: 30px;
+             background-color: orangered;
+            z-index: 99;
+            transition: all 2s ;
+            animation:auto 2s .1s infinite ease-in-out;
+         }
+        .c1{
+            width: 40px;
+            height: 40px;
+            background-color: greenyellow;
+            z-index: 100;
+          transition: all 2s;
+            animation:auto 2s  infinite ease-in-out;
+
+        }
+        @keyframes auto {
+        0%{
+
+        }
+            25%{transform: translate(100px,100px)}
+            50%{transform: translate(200px,0px) }
+            75%{transform: translate(100px,-100px)}
+            100%{transform: translate(0px,0px)}
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="c1 c" ></div>
+    <div class="c2 c" ></div>
+    <div class="c3 c" ></div>
+    <div class="c4 c" ></div>
+</div> 
+</body>
+</html>

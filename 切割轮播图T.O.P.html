@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        var count=0;
+        var flag=true;
+        $(function () {
+            $(".right").click(function () {
+                if(flag){
+                    count++;
+                    flag=false;
+                    $("li").css({transform:'rotateX('+count*90+'deg)'});
+                    setTimeout(function () {
+                        flag=true;
+                    },1000);
+                }
+            });
+            $(".left").click(function () {
+                if(flag){
+                    count--;
+                    flag=false;
+                    $("li").css("transform","rotateX("+count*90+"deg)");
+                    setTimeout(function () {
+                      flag=true;
+                    },1000);
+                }
+            });
+        });
+    </script>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            list-style: none;
+            width: 255px;
+            height: 255px;
+            position: relative;
+            padding: 0;
+            margin: 50px auto;
+            border: 1px solid gray;
+            display: flex;
+        }
+        li{
+            width: 33.33%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: all 1s;
+            position: relative;
+        }
+        li>div{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            overflow: hidden;
+            
+        }
+        div:nth-child(1){
+            background: url("images/top4255.jpg") no-repeat center;
+            transform: rotateX(0deg) translateZ(128px) ;
+        }
+        div:nth-child(2){
+            background: url("images/top3255.jpg") no-repeat center;
+            transform: rotateX(-90deg) translateZ(128px) ;
+        }
+        div:nth-child(3){
+            background: url("images/top5255.jpg") no-repeat center;
+            transform: rotateX(-180deg) translateZ(128px) ;
+        }
+        div:nth-child(4){
+            background: url("images/top0255.jpg") no-repeat center;
+            transform: rotateX(-270deg) translateZ(128px) ;
+        }
+        li:nth-child(1){
+            transition: all 1s ;
+        }
+        li:nth-child(1)>div{
+            background-position: 0 0;
+        }
+        li:nth-child(2){
+                transition: all 1s .1s;
+            }
+        li:nth-child(2)>div{
+            background-position: -85px 0;
+        }
+        li:nth-child(3){
+            transition: all 1s .2s;
+        }
+        li:nth-child(3)>div{
+            background-position: -170px 0;
+        }
+        ul>a{
+            text-decoration: none;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            background-color: gray;
+            font-size: 20px;
+            margin-top: -25px;
+            top: 50%;
+        }
+        ul .left{
+            left: -50px;
+        }
+       ul  .right{
+            right: -50px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+    </li>
+    <li>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+    </li>
+    <li>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+    </li>
+    <a href="javascript:void(0)" class="right">&gt;</a>
+    <a href="javascript:void(0)" class="left">&lt;</a>
+</ul>
+</body>
+</html>
